@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}My Top 10 Movies{% endblock %}
+
+{% block content %}
+<body style="background-image: url({{bg}}) !important;">
+<div class="container border bg-dark text-white py-2 my-5" style="width:80%">
+    <h2 class="heading" style="text-align: center">Here are your 3 films to choose from:</h2>
+    <div class="row gx-2 gx-lg-3 px-2 justify-content-center">
+    {% for movie in movies %}
+    <div class="col-sm-8 col-md-4">
+  <div class="card" >
+    <div class="front" style="background-image: url('{{movie.image_url}}');">
+        {{movie.title}}
+    </div>
+    <div class="back">
+      <div>
+    <div class="title">{{movie.title}} <span class="release_date p-2">{{movie.year}}</span></div>
+        <p class="overview">
+            {{movie.description}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+    </div>
+    {% endfor %}
+    </div>
+    <div class="row py-2">
+        <div class="col text-center">
+            <a href="{{ url_for('search') }}" class="btn btn-primary">Not inspired by these? Try again!</a>
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}
+
+
+
