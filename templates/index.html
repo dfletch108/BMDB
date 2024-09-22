@@ -8,14 +8,14 @@
 <body>
 
         {% block content %}
-            <div class="container container-small border bg-dark text-white p-5 my-5">
+            <div class="container-xl border bg-dark text-white p-5 my-5">
                 <div class="row gx-4 gx-lg-5 py-2 justify-content-center" >
-                    <div class="col" >
+                    <div class="col-sm-8 col-lg-6" >
                         <h1 class="text-center my-2">BMDB</h1>
                     </div>
 
                 <div class="row gx-4 gx-lg-5 py-2 justify-content-center" >
-                    <div class="col" >
+                    <div class="col-sm-8 col-lg-6" >
                         <h2 class="text-center">Betty's Movie Database</h2>
                     </div>
                     <div class="row gx-4 gx-lg-5 py-2 justify-content-center">
@@ -23,7 +23,7 @@
                             <p class="text-center">Let me choose 3 films at random based on what you're feeling like watching today!</p>
                         </div>
                     </div>
-                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="row gx-4 gx-lg-5 sm-8 col-lg-6 justify-content-center">
                             <a href="{{ url_for('search') }}" class="btn btn-primary">Get Started</a>
                     </div>
                 </div>

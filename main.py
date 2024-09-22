@@ -86,7 +86,7 @@ def select():
             # The data in release_date includes month and day, we will want to get rid of.
             year=data["release_date"].split("-")[0],
             image_url=f"{TMDB_IMAGE_URL}{data['poster_path']}",
-            description=data["overview"]
+            description=(data["overview"][:245] + '..') if len(data["overview"]) > 245 else data["overview"]
         )
         db.session.add(new_movie)
         db.session.commit()
@@ -131,4 +131,4 @@ def result():
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
