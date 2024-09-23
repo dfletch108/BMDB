@@ -111,7 +111,7 @@ def search():
     if form.validate_on_submit():
         chosen_category = request.form.get('category')
         chosen_movies = db.session.execute(db.select(Movie).where(Movie.category == chosen_category).order_by(func.random()).limit(3)).scalars().all()
-        bg_path = '/static/images/christmas-rom-com-background.png' if chosen_category == 'Christmas rom-com' else f'/static/images/{chosen_category}-background.png'
+        bg_path = '/static/images/Christmas-rom-com-background.png' if chosen_category == 'Christmas rom-com' else f'/static/images/{chosen_category}-background.png'
         return render_template('result.html', movies=chosen_movies, bg=bg_path)
     return render_template("search.html", form=form)
 
