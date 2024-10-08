@@ -4,23 +4,24 @@
 {% block content %}
 
 <div class="container">
+    <br />
+    <div class="row">
+        <h1 style="color:white">All Films</h1>
+        <input type="text" id="table-filter-input" onkeyup="tableFilter()" placeholder="Search by film title..." />
+    </div>
   <div class="row">
     <div class="col-sm-12">
-
-      <h1 style="color:white">All Films</h1>
-
-	  <table class="table table-dark table-striped table-hover">
-          <!-- This is where you will write the code to render a Bootstrap
-          Table that contains all the information from the
-          cafe-data.csv file. -->
+	  <table class="table table-dark table-striped table-hover" id="filtered-table">
           <tr>
               <th>ID</th>
               <th>Film Title</th>
               <th>Year</th>
               <th>Category</th>
               <th>Overview</th>
+              {% if logged_in: %}
               <th>Update Record</th>
               <th>Delete Record</th>
+              {% endif %}
           </tr>
           {% for movie in movies %}
           <tr>
@@ -29,8 +30,10 @@
               <td>{{ movie.year }}</td>
               <td>{{ movie.category }}</td>
               <td>{{ movie.description }}</td>
+              {% if logged_in: %}
               <td><a href="{{ url_for('edit', id=movie.id) }}" class="button">Update</a></td>
               <td><a href="{{ url_for('delete', id=movie.id) }}" class="button">Delete</a></td>
+              {% endif %}
           </tr>
           {% endfor %}
   	  </table>
@@ -40,5 +43,24 @@
     </div>
   </div>
 </div>
-
+<script>
+function tableFilter() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("table-filter-input");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("filtered-table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
 {% endblock %}

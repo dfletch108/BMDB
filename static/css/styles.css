@@ -11,6 +11,14 @@ h2 {
     font-family: "New Amsterdam", sans-serif;
 }
 
+.error {
+    color: red;
+}
+
+.info {
+    color: blue;
+}
+
 @media (min-width: 768px) {
     .container-small {
         width: 300px;
@@ -143,4 +151,13 @@ h2 {
 	 width: 100%;
 	 overflow: hidden;
 	 text-overflow: ellipsis;
+}
+
+#table-filter-input {
+     width: 50%;
+     border-radius: 3px;
+     font-size: 1em;
+     padding: 12px 20px;
+     border: 1px solid #ddd;
+     margin: 14px;
 }

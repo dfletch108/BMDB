@@ -34,9 +34,21 @@
                 <li class="nav-item px-lg-2">
                     <a class="nav-link" href="{{ url_for('films') }}">View Film List</a>
                 </li>
+                {% if logged_in: %}
                 <li class="nav-item px-lg-2">
                     <a class="nav-link" href="{{ url_for('add') }}">Add New Film</a>
                 </li>
+                <li class="nav-item px-lg-2">
+                    <a class="nav-link" href="{{ url_for('register') }}">Create New Admin</a>
+                </li>
+                <li class="nav-item px-lg-2">
+                <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+                </li>
+                {% else %}
+                <li class="nav-item px-lg-2">
+                      <a class="nav-link" href="{{ url_for('login') }}">Admin Login</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
         </div>
