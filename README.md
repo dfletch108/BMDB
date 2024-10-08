@@ -15,6 +15,7 @@ During the building and deployment of this app has allowed I have been using the
 - APIs
 
 ---------RELEASE NOTES---------
+
 v1.1 
 New features added:
  - filter bar added to Film List page to search for films in database by title
