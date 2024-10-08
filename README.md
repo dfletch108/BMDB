@@ -14,5 +14,14 @@ During the building and deployment of this app has allowed I have been using the
 - PostgreSQL
 - APIs
 
-Future updates to come will include user accounts/authentication for storing separate film lists and improved error handling.
-  
+---------RELEASE NOTES---------
+v1.1 
+New features added:
+ - filter bar added to Film List page to search for films in database by title
+ - New admin authentication added - anyone can use the random film selector but the ability to add, edit or delete films is now restricted to admins
+ - New admins can be registered by an existing admin only. Unauthorised visits to the /register endpoint are blocked
+ - Improved error handling and user feedback via flash messaging
+
+v1.0
+Initial release at basic app
+
