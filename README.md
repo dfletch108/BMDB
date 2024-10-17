@@ -10,11 +10,17 @@ During the building and deployment of this app has allowed I have been using the
 - Jinja
 - HTML
 - CSS
+- jQuery
 - Bootstrap
 - PostgreSQL
 - APIs
 
 ---------RELEASE NOTES---------
+
+v1.2
+Summary:
+- Created index.js for some basic fadeIn animations via jQuery
+- Fixed case-sensitivity on email check upon admin registration/login
 
 v1.1 
 New features added:
