@@ -158,8 +158,8 @@ def result():
 @login_required
 def register():
     if request.method == "POST":
-        email = request.form.get('email')
-        result = db.session.execute(db.select(User).where(User.email == email))
+        email = request.form.get('email').lower()
+        result = db.session.execute(db.select(User).where(func.lower(User.email) == email))
         # Note, email in db is unique so will only have one result.
         user = result.scalar()
         if user:
@@ -192,11 +192,11 @@ def register():
 @app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        email = request.form.get('email')
+        email = request.form.get('email').lower()
         password = request.form.get('password')
 
         # Find user by email entered.
-        result = db.session.execute(db.select(User).where(User.email == email))
+        result = db.session.execute(db.select(User).where(func.lower(User.email) == email))
         user = result.scalar()
 
         # Check stored password hash against entered password hashed.

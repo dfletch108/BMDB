@@ -19,9 +19,17 @@ h2 {
     color: blue;
 }
 
+@media (max-width: 768px) {
+    .container-small {
+        width: 400px;
+    }
+    .container-large {
+        width: 480px;
+    }
+}
 @media (min-width: 768px) {
     .container-small {
-        width: 300px;
+        width: 500px;
     }
     .container-large {
         width: 970px;
@@ -32,20 +40,21 @@ h2 {
         width: 500px;
     }
     .container-large {
-        width: 1170px;
+        width: 960px;
     }
 }
 @media (min-width: 1200px) {
     .container-small {
-        width: 30%;
+        width: 500px;
     }
     .container-large {
-        width: 1500px;
+        width: 960px;
     }
 }
 
-.container-small, .container-large {
-    max-width: 100%;
+.hidden {
+    opacity:0;
+    transition: opacity .5s;
 }
 
 .nav-item{
@@ -71,6 +80,7 @@ h2 {
 	 margin: 1em auto;
 	 position: relative;
 }
+
  @media screen and (max-width: 800px) {
 	 .card {
 		 width: calc(50% - 3rem);
