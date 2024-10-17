@@ -21,6 +21,7 @@ v1.2
 Summary:
 - Created index.js for some basic fadeIn animations via jQuery
 - Fixed case-sensitivity on email check upon admin registration/login
+- Fixed some @media CSS which was not displaying as expected
 
 v1.1 
 New features added:
