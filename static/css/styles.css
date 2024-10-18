@@ -21,7 +21,7 @@ h2 {
 
 @media (max-width: 768px) {
     .container-small {
-        width: 400px;
+        width: 360px;
     }
     .container-large {
         width: 480px;
